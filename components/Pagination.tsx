@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './ui/button';
 
 interface PaginationProps {
   page: number;
@@ -21,18 +22,20 @@ const Pagination: React.FC<PaginationProps> = ({ page, setPage }) => {
   return (
     <>
       <div className="my-3 d-flex justify-content-between align-items-center">
-        <button
-          className="px-3 py-1 m-1 text-center btn-primary"
+        <Button
+          className="px-3 py-1 m-1 text-center"
+          variant="link"
           onClick={handlePrevious}
         >
           Previous
-        </button>
-        <button
-          className="px-3 py-1 m-1 text-center btn-primary"
+        </Button>
+        <Button
+          className="px-3 py-1 m-1 text-center"
+          variant="link"
           onClick={handleNext}
         >
           Next
-        </button>
+        </Button>
       </div>
     </>
   );

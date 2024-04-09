@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { img_300, unavailable } from '@/lib/config_tmdb';
 import Pagination from '@/components/Pagination';
 import Genre from '@/components/Genre';
 import useGenre from '@/hooks/useGenre';
@@ -43,7 +42,7 @@ const Movies = () => {
             <MovieCard data={Val} key={Val.id} />
           ))}
         </div>
-        <Pagination page={page} setPage={setPage} />;
+        <Pagination page={page} setPage={setPage} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, CardContent, CardTitle } from './ui/card';
 
 interface MovieCardProps {
   data: {
@@ -23,8 +24,10 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
     media_type,
   } = data;
 
+  const year = new Date(release_date).getFullYear();
+
   return (
-    <div className="col-md-3 col-sm-4 py-3" id="card" key={id}>
+    <Card key={id}>
       <div className="card bg-dark" key={id}>
         <img
           src={
@@ -35,15 +38,17 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
           className="card-img-top pt-3 pb-0 px-3"
           alt={title || name}
         />
-        <div className="card-body">
-          <h5 className="card-title text-center fs-5">{title || name}</h5>
-          <div className="d-flex fs-6 align-items-center justify-content-evenly movie">
+        <CardTitle className="text-md  text-center font-medium p-2">
+          {title || name}
+        </CardTitle>
+        <CardContent>
+          <div className="flex items-center justify-between">
             <div>{media_type === 'tv' ? 'TV Series' : 'Movie'}</div>
-            <div>{first_air_date || release_date}</div>
+            <div>{year} year</div>
           </div>
-        </div>
+        </CardContent>
       </div>
-    </div>
+    </Card>
   );
 };
 

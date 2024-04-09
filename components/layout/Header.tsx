@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
           <Link
             href="/series"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
           >
             TV Series
           </Link>
