@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardTitle } from './ui/card';
+import { Button } from './ui/button';
+import { FolderCheck, FolderHeart } from 'lucide-react';
 
 interface MovieCardProps {
   data: {
@@ -37,6 +39,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
           }
           className="card-img-top pt-3 pb-0 px-3"
           alt={title || name}
+          width="100%"
         />
         <CardTitle className="text-md  text-center font-medium p-2">
           {title || name}
@@ -45,6 +48,14 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
           <div className="flex items-center justify-between">
             <div>{media_type === 'tv' ? 'TV Series' : 'Movie'}</div>
             <div>{year} year</div>
+          </div>
+          <div className="flex items-center justify-end">
+            <Button variant="ghost">
+              <FolderCheck />
+            </Button>
+            <Button variant="ghost">
+              <FolderHeart />
+            </Button>
           </div>
         </CardContent>
       </div>
